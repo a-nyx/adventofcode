@@ -1,12 +1,12 @@
-const fs = require('fs');
-const data = fs.readFileSync('./input.txt', 'utf8');
+const fs = require("fs");
+const data = fs.readFileSync("./input.txt", "utf8");
 
-const lines = data.split('\n');
+const lines = data.split("\n");
 
 let sum = 0;
 let maxs = [0, 0, 0];
 
-lines.forEach(line => {
+lines.forEach((line) => {
   const num = Number(line);
 
   if (num !== 0) {
