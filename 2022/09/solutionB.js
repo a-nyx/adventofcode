@@ -1,9 +1,9 @@
-const fs = require('fs');
+const fs = require("fs");
 // const data = fs.readFileSync('./inputA.txt', 'utf8'); // answer: 1
 // const data = fs.readFileSync('./inputB.txt', 'utf8'); // answer: 36
-const data = fs.readFileSync('./inputC.txt', 'utf8'); // answer: 2653
+const data = fs.readFileSync("./inputC.txt", "utf8"); // answer: 2653
 
-const lines = data.split('\n');
+const lines = data.split("\n");
 
 const unique = new Set();
 const knot_count = 10;
@@ -65,17 +65,17 @@ const moveKnots = (newHr, newHc) => {
 };
 
 for (let i = 0; i < lines.length; i++) {
-  if (lines[i] == '') continue;
+  if (lines[i] == "") continue;
   const where = lines[i][0];
   const step = Number(lines[i].slice(2));
 
   for (let s = 0; s < step; s++) {
     let newHr = knots[knots.length - 1].r;
     let newHc = knots[knots.length - 1].c;
-    if (where == 'R') newHc++;
-    if (where == 'L') newHc--;
-    if (where == 'U') newHr--;
-    if (where == 'D') newHr++;
+    if (where == "R") newHc++;
+    if (where == "L") newHc--;
+    if (where == "U") newHr--;
+    if (where == "D") newHr++;
     moveKnots(newHr, newHc);
   }
 }
